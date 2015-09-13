@@ -1,4 +1,16 @@
 Rails.application.configure do
+  MyApp::Application.configure do
+    config.react.variant = :development
+  end
+
+  MyApp::Application.configure do
+    config.react.variant = :production
+  end
+
+  MyApp::Application.configure do
+    config.react.addons = true
+  end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

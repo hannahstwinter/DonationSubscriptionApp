@@ -1,0 +1,21 @@
+{
+  "name": "Donation Subscription App",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hannahstwinter/DonationSubscriptionApp",
+  "authors": [
+    "hannahstwinter <hstwinter@gmail.com>"
+  ],
+  "description": "Subscription service to manage recurring donations.",
+  "main": "[]",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3"
+  }
+}

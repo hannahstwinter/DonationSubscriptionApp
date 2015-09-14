@@ -8,7 +8,7 @@ NavElementDescription.propTypes = {
 };
 
 NavElementDescription.render = function () {
-  return (<button onClick={ this.navigateRoute_ }>{ this.props.title }</button>);
+  return (<span onClick={ this.navigateRoute_ }>{ this.props.title }</span>);
 };
 
 NavElementDescription.navigateRoute_ = function () {

@@ -5,12 +5,16 @@ AgenciesNavMenuDescription.displayName = 'AgenciesNavMenu';
 AgenciesNavMenuDescription.render = function () {
   var agencies, sign_up, sign_in;
 
-  agencies = < NavElement title='Agencies' route='/agencies' />;
-  sign_up = < NavElement title='Sign Up' route='/agencies/new' />;
-  sign_in = < NavElement title='Sign In' route='/#' />;
+  agencies = < NavElement title="Browse Agencies" route="/agencies" />;
+  sign_up = < NavElement title="Sign Up" route="/agencies/new" />;
+  sign_in = < NavElement title="Sign In" route="/#" />;
 
   return (
-    <span className='nav-menu'>{ agencies } { sign_up } { sign_in }</span>
+    <ul className="nav-menu">
+      <li className="nav-menu-item">{ agencies }</li>
+      <li className="nav-menu-item">{ sign_up }</li>
+      <li className="nav-menu-item">{ sign_in }</li>
+    </ul>
   );
 };
 

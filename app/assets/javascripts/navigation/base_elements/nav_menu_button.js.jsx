@@ -3,7 +3,10 @@ NavMenuButtonDescription = {};
 NavMenuButtonDescription.displayName = 'NavMenuButton';
 
 NavMenuButtonDescription.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
+  menu: React.PropTypes.object,
+  route: React.PropTypes.string,
+  className: React.PropTypes.string
 };
 
 NavMenuButtonDescription.getInitialState = function () {
@@ -13,23 +16,26 @@ NavMenuButtonDescription.getInitialState = function () {
 };
 
 NavMenuButtonDescription.render = function () {
-  var menu;
+  var menu, onClickFunction;
 
   menu = this.state.menuVisible ? this.props.menu : null;
+  onClickFunction = this.props.menu ? this.toggleMenuVisibility_ : this.navigateRoute_;
+  classNames = "nav-menu-button " + this.props.className;
 
   return (
     <span>
-      <button onClick={ this.toggleMenuVisibility_ } >{ this.props.title }</button>
+      <span className={ classNames } onClick={ onClickFunction } >{ this.props.title }</span>
       <span>{ menu }</span>
     </span>
   );
 };
 
 NavMenuButtonDescription.toggleMenuVisibility_ = function () {
-  var visible;
+  this.setState({ menuVisible: !this.state.menuVisible });
+};
 
-  visible = this.state.menuVisible;
-  this.setState({ menuVisible: !visible });
+NavMenuButtonDescription.navigateRoute_ = function () {
+  location.href = this.props.route;
 };
 
 NavMenuButton = React.createClass(NavMenuButtonDescription);
